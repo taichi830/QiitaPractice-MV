@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521E8F3B2B468671005B8D9A /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 521E8F3A2B468671005B8D9A /* Dependencies */; };
+		521E8F3D2B468671005B8D9A /* DependenciesMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 521E8F3C2B468671005B8D9A /* DependenciesMacros */; };
 		52419CE22B455C3A0075CD66 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52419CE12B455C3A0075CD66 /* Date+Format.swift */; };
 		52419CE62B45CF670075CD66 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52419CE52B45CF670075CD66 /* DependencyInjection.swift */; };
 		52840EF02B2D683900CFB591 /* QiitaPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52840EEF2B2D683900CFB591 /* QiitaPracticeApp.swift */; };
@@ -90,7 +92,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521E8F3B2B468671005B8D9A /* Dependencies in Frameworks */,
 				52840F4D2B45187600CFB591 /* Kingfisher in Frameworks */,
+				521E8F3D2B468671005B8D9A /* DependenciesMacros in Frameworks */,
 				52840F1F2B40094300CFB591 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +290,8 @@
 			packageProductDependencies = (
 				52840F1E2B40094300CFB591 /* Alamofire */,
 				52840F4C2B45187600CFB591 /* Kingfisher */,
+				521E8F3A2B468671005B8D9A /* Dependencies */,
+				521E8F3C2B468671005B8D9A /* DependenciesMacros */,
 			);
 			productName = QiitaPractice;
 			productReference = 52840EEC2B2D683900CFB591 /* QiitaPractice.app */;
@@ -362,6 +368,7 @@
 			packageReferences = (
 				52840F1D2B40094300CFB591 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				52840F4B2B45187600CFB591 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				521E8F392B468671005B8D9A /* XCRemoteSwiftPackageReference "swift-dependencies" */,
 			);
 			productRefGroup = 52840EED2B2D683900CFB591 /* Products */;
 			projectDirPath = "";
@@ -777,6 +784,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		521E8F392B468671005B8D9A /* XCRemoteSwiftPackageReference "swift-dependencies" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-dependencies";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.5;
+			};
+		};
 		52840F1D2B40094300CFB591 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -796,6 +811,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		521E8F3A2B468671005B8D9A /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 521E8F392B468671005B8D9A /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = Dependencies;
+		};
+		521E8F3C2B468671005B8D9A /* DependenciesMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 521E8F392B468671005B8D9A /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = DependenciesMacros;
+		};
 		52840F1E2B40094300CFB591 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 52840F1D2B40094300CFB591 /* XCRemoteSwiftPackageReference "Alamofire" */;
