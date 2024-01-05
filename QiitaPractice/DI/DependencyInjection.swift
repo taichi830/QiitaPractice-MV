@@ -6,8 +6,16 @@
 //
 
 import Foundation
-//import Dependencies
+import Dependencies
 
-private enum RepoRepositoryKey {
-    
+private enum ItemRequestKey: DependencyKey {
+    static var liveValue: AnyItemRequest = .init(ItemsRequest())
+    static var previewValue: AnyItemRequest = .init(StubItemRequest())
+}
+
+extension DependencyValues {
+    var itemRequest: AnyItemRequest {
+        get { self[ItemRequestKey.self]}
+        set { self[ItemRequestKey.self] = newValue }
+    }
 }

@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import Dependencies
 
 struct HomeView: View {
     @State var path = NavigationPath()
-    private let homeData = HomeData()
+    let homeData: HomeData
     
     var body: some View {
         Navigation(path: $path) {
@@ -31,5 +32,11 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(
+        homeData: withDependencies {
+            $0 = .preview
+          } operation: {
+            HomeData()
+          }
+    )
 }

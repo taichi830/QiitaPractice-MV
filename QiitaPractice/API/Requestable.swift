@@ -12,19 +12,23 @@ protocol Requestable {
     associatedtype Parameter: Encodable
     associatedtype Response: CustomDecodabel
     
-    var host: String { get } // https://qiita.com/api/v2/items の https://qiita.com の部分
-    var path: String { get } // https://qiita.com/api/v2/items の /api/v2/items の部分
-    var method: HTTPMethod { get }
-    
     func send(with parameter: Parameter) async throws -> Response
 }
 
+protocol AFRequestable: Requestable {
+    var host: String { get } // https://qiita.com/api/v2/items の https://qiita.com の部分
+    var path: String { get } // https://qiita.com/api/v2/items の /api/v2/items の部分
+    var method: HTTPMethod { get }
+}
+
 // GET Request
-protocol GetRequestable: Requestable {}
+protocol GetRequestable: AFRequestable {
+    func get(parameter: Parameter) async throws -> Response
+}
 
 // TODO: ここ共通化したい
-extension GetRequestable {
-    func send(with parameter: Parameter) async throws -> Response {
+extension GetRequestable where Self: AFRequestable {
+    func get(parameter: Parameter) async throws -> Response {
         let url = buildURL(host: self.host, path: self.path)
         let request = AF.request(url, method: self.method, parameters: parameter)
         return try await withCheckedThrowingContinuation { continuation in
@@ -48,6 +52,10 @@ extension GetRequestable {
                 }
             }
         }
+    }
+    
+    func send(with parameter: Parameter) async throws -> Response {
+        try await get(parameter: parameter)
     }
     
     private func buildURL(host: String, path: String) -> URL {

@@ -23,3 +23,5 @@ extension ItemsRequestable {
 }
 
 final class ItemsRequest: ItemsRequestable {}
+
+typealias AnyItemRequest = AnyRequest<ItemsParameter, [ItemsResponse]>
