@@ -8,8 +8,8 @@
 import Foundation
 
 struct ItemsResponse: CustomDecodabel {
-    var created_at: Date
     var id: String
+    var created_at: Date
     var title: String
     var updated_at: Date?
     var url: String
@@ -32,7 +32,9 @@ struct ItemsResponse: CustomDecodabel {
     }
 }
 
-struct User: CustomDecodabel {
+extension ItemsResponse: Hashable {}
+
+struct User: CustomDecodabel, Hashable {
     var name: String
     var profile_image_url: String
 }

@@ -15,13 +15,14 @@ struct HomeView: View {
     var body: some View {
         Navigation(path: $path) {
             if let items = homeData.items {
-                ItemList(items: items) { _ in
-                    path.append(0)
+                ItemList(items: items) { item in
+                    path.append(item)
                 }
                 .navigationTitle("QiitaPractice")
                 .navigationBarTitleDisplayMode(.large)
-                .navigationDestination(for: Int.self) { appended in
-                    Text("next page")
+                .navigationDestination(for: ItemsResponse.self) { appended in
+                    ItemDetail(url: appended.articleURL)
+                        .navigationBarHidden(true)
                 }
             }
         }
