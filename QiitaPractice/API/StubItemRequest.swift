@@ -8,7 +8,7 @@
 import Foundation
 
 final class StubItemRequest: StubRequest, ItemsRequestable {
-    func get(parameter: ItemsParameter) async throws -> [ItemsResponse] {
+    func send(with parameter: ItemsParameter) async throws -> [ItemsResponse] {
         try await requestJson(with: "items")
     }
 }

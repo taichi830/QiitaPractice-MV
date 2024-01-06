@@ -19,9 +19,8 @@ extension ItemsRequestable {
     
     var host: String { "https://qiita.com" }
     var path: String { "/api/v2/items" }
-    var method: HTTPMethod { .get }
 }
 
-final class ItemsRequest: ItemsRequestable {}
+final class ItemsRequest: RequestBase, ItemsRequestable {}
 
 typealias AnyItemRequest = AnyRequest<ItemsParameter, [ItemsResponse]>

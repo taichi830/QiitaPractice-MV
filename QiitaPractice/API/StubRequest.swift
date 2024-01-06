@@ -11,19 +11,10 @@ class StubRequest {
     func requestJson<T: CustomDecodabel>(with path: String) async throws -> T {
         let path = Bundle.main.url(forResource: path, withExtension: "json")!
         let jsonData = try Data(contentsOf: path)
-        return try await withCheckedThrowingContinuation { continuation in
-            do {
-                let response = try T.decoder.decode(T.self, from: jsonData)
-                return continuation.resume(returning: response)
-            } catch {
-                fatalError(error.localizedDescription)
-            }
+        do {
+            return try T.decoder.decode(T.self, from: jsonData)
+        } catch {
+            fatalError(error.localizedDescription)
         }
-    }
-}
-
-extension GetRequestable where Self: StubRequest {
-    func send(with parameter: Parameter) async throws -> Response {
-        try await get(parameter: parameter)
     }
 }
