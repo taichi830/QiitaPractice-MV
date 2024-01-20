@@ -9,14 +9,13 @@ import Foundation
 import Dependencies
 
 @MainActor
-@Observable
-final class HomeData {
+final class HomeData: ObservableObject {
     @ObservationIgnored
     @Dependency(\.itemRequest) var itemRequest
     
-    var isLoading = false
-    var error: Error?
-    var items: [ItemsResponse]?
+    @Published var isLoading = false
+    @Published var error: Error?
+    @Published var items: [ItemsResponse] = []
     
     func fetchItems() {
         isLoading = true

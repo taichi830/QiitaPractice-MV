@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    let router: Router = Router(isPresented: .constant(.none))
     var body: some View {
-        HomeView(homeData: HomeData())
+        Navigation(router: router) {
+            HomeView(homeData: HomeData())
+        }
     }
 }
 

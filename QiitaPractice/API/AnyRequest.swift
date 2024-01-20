@@ -12,9 +12,9 @@ struct AnyRequest<Prameter: Encodable, Response: CustomDecodabel>: Requestable {
         _send = base.send
     }
     
+    private var _send: (Parameter) async throws -> Response
+    
     func send(with parameter: Prameter) async throws -> Response {
         try await _send(parameter)
     }
-    
-    private var _send: (Parameter) async throws -> Response
 }
