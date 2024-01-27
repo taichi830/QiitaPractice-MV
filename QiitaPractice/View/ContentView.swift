@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    let router: Router = Router(isPresented: .constant(.none))
     var body: some View {
-        Navigation(router: router) {
-            HomeView(homeData: HomeData())
+        Navigation(HomeRoute.self) { router in
+            HomeView(homeData: HomeData(), router: router)
         }
     }
 }

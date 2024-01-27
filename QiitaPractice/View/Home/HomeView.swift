@@ -10,11 +10,16 @@ import Dependencies
 
 struct HomeView: View {
     @StateObject var homeData: HomeData
-    @EnvironmentObject var router: Router
+    @StateObject var router: Router<HomeRoute>
+    
+    init(homeData: HomeData, router: Router<HomeRoute>) {
+        _homeData = StateObject(wrappedValue: homeData)
+        _router = StateObject(wrappedValue: router)
+    }
     
     var body: some View {
         ItemList(items: homeData.items) { item in
-            router.presentFullScreen(.detail(input: item.articleURL))
+            router.routeTo(.detail(item.articleURL))
         }
         .navigationTitle("QiitaPractice")
         .navigationBarTitleDisplayMode(.large)
@@ -30,6 +35,7 @@ struct HomeView: View {
             $0 = .preview
         } operation: {
             HomeData()
-        }
+        }, 
+        router: .init(isPresented: .constant(.none))
     )
 }

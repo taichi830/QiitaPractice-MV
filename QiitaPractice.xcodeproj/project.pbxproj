@@ -17,6 +17,8 @@
 		526C8D852B47E58D002F930B /* items.json in Resources */ = {isa = PBXBuildFile; fileRef = 526C8D842B47D489002F930B /* items.json */; };
 		526C8D892B4947DE002F930B /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C8D882B4947DE002F930B /* ItemDetail.swift */; };
 		526C8D8C2B49B416002F930B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C8D8B2B49B416002F930B /* Router.swift */; };
+		526C8D8E2B5BD4BD002F930B /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C8D8D2B5BD4BD002F930B /* Routable.swift */; };
+		526C8D912B5BDC89002F930B /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C8D902B5BDC89002F930B /* HomeRoute.swift */; };
 		52840EF02B2D683900CFB591 /* QiitaPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52840EEF2B2D683900CFB591 /* QiitaPracticeApp.swift */; };
 		52840EF22B2D683900CFB591 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52840EF12B2D683900CFB591 /* ContentView.swift */; };
 		52840EF42B2D683B00CFB591 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52840EF32B2D683B00CFB591 /* Assets.xcassets */; };
@@ -70,6 +72,8 @@
 		526C8D842B47D489002F930B /* items.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = items.json; sourceTree = "<group>"; };
 		526C8D882B4947DE002F930B /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
 		526C8D8B2B49B416002F930B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		526C8D8D2B5BD4BD002F930B /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		526C8D902B5BDC89002F930B /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
 		52840EEC2B2D683900CFB591 /* QiitaPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52840EEF2B2D683900CFB591 /* QiitaPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaPracticeApp.swift; sourceTree = "<group>"; };
 		52840EF12B2D683900CFB591 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,8 +152,17 @@
 			isa = PBXGroup;
 			children = (
 				526C8D8B2B49B416002F930B /* Router.swift */,
+				526C8D8D2B5BD4BD002F930B /* Routable.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		526C8D8F2B5BDC5D002F930B /* ItemDetail */ = {
+			isa = PBXGroup;
+			children = (
+				526C8D882B4947DE002F930B /* ItemDetail.swift */,
+			);
+			path = ItemDetail;
 			sourceTree = "<group>";
 		};
 		52840EE32B2D683900CFB591 = {
@@ -247,6 +260,7 @@
 			children = (
 				52840EF12B2D683900CFB591 /* ContentView.swift */,
 				52840F352B42AF3500CFB591 /* Home */,
+				526C8D8F2B5BDC5D002F930B /* ItemDetail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,7 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				52840F362B42AF9000CFB591 /* HomeView.swift */,
-				526C8D882B4947DE002F930B /* ItemDetail.swift */,
+				526C8D902B5BDC89002F930B /* HomeRoute.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -462,6 +476,7 @@
 				52840F2E2B4159F500CFB591 /* ItemsResponse.swift in Sources */,
 				526C8D7E2B4714DC002F930B /* AnyRequest.swift in Sources */,
 				52840F372B42AF9000CFB591 /* HomeView.swift in Sources */,
+				526C8D8E2B5BD4BD002F930B /* Routable.swift in Sources */,
 				52840F1C2B40082700CFB591 /* Requestable.swift in Sources */,
 				52840EF22B2D683900CFB591 /* ContentView.swift in Sources */,
 				52840F3F2B44048A00CFB591 /* ItemList.swift in Sources */,
@@ -471,6 +486,7 @@
 				52840F462B44077D00CFB591 /* ItemsResponse+Entity.swift in Sources */,
 				526C8D892B4947DE002F930B /* ItemDetail.swift in Sources */,
 				526C8D802B47BDA7002F930B /* StubItemRequest.swift in Sources */,
+				526C8D912B5BDC89002F930B /* HomeRoute.swift in Sources */,
 				52840F302B4163BF00CFB591 /* ConnectionError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

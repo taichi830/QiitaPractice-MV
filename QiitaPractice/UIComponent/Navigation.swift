@@ -7,30 +7,29 @@
 
 import SwiftUI
 
-struct Navigation<Content: View>: View {
-    @StateObject var router: Router
-    private let content: Content
+struct Navigation<Content: View, Destination: Routable>: View {
+    @StateObject var router: Router<Destination> = .init(isPresented: .constant(.none))
+    private let rootContent: (Router<Destination>) -> Content
     
-    init(router: Router, @ViewBuilder content: () -> Content) {
-        self._router = .init(wrappedValue: router)
-        self.content = content()
+    init(_ routeType: Destination.Type, @ViewBuilder content: @escaping (Router<Destination>) -> Content) {
+        self.rootContent = content
     }
     
     var body: some View {
         NavigationStack(path: $router.path) {
-            content
-                .navigationDestination(for: Router.Route.self){ route in
-                    router.view(for: route, type: .navigation)
+            rootContent(router)
+                .navigationDestination(for: Destination.self) { route in
+                    router.view(for: route)
                 }
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarBackground(Color.green, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
         }
         .sheet(item: $router.presentingSheet) { route in
-            router.view(for: route, type: .sheet)
+            router.view(for: route)
         }
         .fullScreenCover(item: $router.presentingFullScreenCover) { route in
-            router.view(for: route, type: .fullScreenCover)
+            router.view(for: route)
         }
         .environmentObject(router)
     }

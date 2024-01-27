@@ -8,40 +8,34 @@
 import Foundation
 import SwiftUI
 
-class Router: ObservableObject {
-    enum NavigationType {
-        case navigation
-        case sheet
-        case fullScreenCover
-    }
-    
-    enum Route: Hashable, Identifiable {
-        var id: Self {
-            return self
-        }
-        case detail(input: URL)
-    }
-    
+class Router<Destination: Routable>: ObservableObject {
     @Published var path: NavigationPath = NavigationPath()
-    @Published var presentingSheet: Route?
-    @Published var presentingFullScreenCover: Route?
+    @Published var presentingSheet: Destination?
+    @Published var presentingFullScreenCover: Destination?
+    @Published var isPresented: Binding<Destination?>
     
-    @Published var isPresented: Binding<Route?>
-    
-    init(isPresented: Binding<Route?>) {
+    init(isPresented: Binding<Destination?>) {
         self.isPresented = isPresented
     }
     
-    @ViewBuilder func view(for route: Route, type: NavigationType) -> some View {
-        switch route {
-        case .detail(let url):
-            ItemDetail(url: url)
+    @ViewBuilder func view(for route: Destination) -> some View {
+        route.viewToDisplay(router: router(navigationType: route.navigationType))
+    }
+    
+    func routeTo(_ route: Destination) {
+        switch route.navigationType {
+        case .push:
+            push(route)
+        case .sheet:
+            presentSheet(route)
+        case .fullScreenCover:
+            presentFullScreen(route)
         }
     }
     
     func router(navigationType: NavigationType) -> Router {
         switch navigationType {
-        case .navigation:
+        case .push:
             return self
         case .sheet:
             return Router(
@@ -60,16 +54,16 @@ class Router: ObservableObject {
         }
     }
     
-    func presentSheet(_ route: Route) {
+    func push(_ appRoute: Destination) {
+        path.append(appRoute)
+    }
+    
+    func presentSheet(_ route: Destination) {
         presentingSheet = route
     }
     
-    func presentFullScreen(_ route: Route) {
+    func presentFullScreen(_ route: Destination) {
         presentingFullScreenCover = route
-    }
-    
-    func navigationTo(_ appRoute: Route) {
-        path.append(appRoute)
     }
     
     func navigationBack() {
