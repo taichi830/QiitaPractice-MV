@@ -66,7 +66,15 @@ class Router<Destination: Routable>: ObservableObject {
         presentingFullScreenCover = route
     }
     
-    func navigationBack() {
-        path.removeLast()
+    func dismiss() {
+        if !path.isEmpty {
+            path.removeLast()
+        } else if presentingSheet != nil {
+            presentingSheet = nil
+        } else if presentingFullScreenCover != nil {
+            presentingFullScreenCover = nil
+        } else {
+            isPresented.wrappedValue = nil
+        }
     }
 }

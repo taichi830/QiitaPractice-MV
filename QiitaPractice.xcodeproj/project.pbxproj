@@ -19,13 +19,11 @@
 		526C8D8C2B49B416002F930B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C8D8B2B49B416002F930B /* Router.swift */; };
 		526C8D8E2B5BD4BD002F930B /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C8D8D2B5BD4BD002F930B /* Routable.swift */; };
 		526C8D912B5BDC89002F930B /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C8D902B5BDC89002F930B /* HomeRoute.swift */; };
+		526C8D982B64B735002F930B /* RouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C8D972B64B735002F930B /* RouterTest.swift */; };
 		52840EF02B2D683900CFB591 /* QiitaPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52840EEF2B2D683900CFB591 /* QiitaPracticeApp.swift */; };
 		52840EF22B2D683900CFB591 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52840EF12B2D683900CFB591 /* ContentView.swift */; };
 		52840EF42B2D683B00CFB591 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52840EF32B2D683B00CFB591 /* Assets.xcassets */; };
 		52840EF82B2D683B00CFB591 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52840EF72B2D683B00CFB591 /* Preview Assets.xcassets */; };
-		52840F022B2D683B00CFB591 /* QiitaPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52840F012B2D683B00CFB591 /* QiitaPracticeTests.swift */; };
-		52840F0C2B2D683B00CFB591 /* QiitaPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52840F0B2B2D683B00CFB591 /* QiitaPracticeUITests.swift */; };
-		52840F0E2B2D683B00CFB591 /* QiitaPracticeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52840F0D2B2D683B00CFB591 /* QiitaPracticeUITestsLaunchTests.swift */; };
 		52840F1C2B40082700CFB591 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52840F1B2B40082700CFB591 /* Requestable.swift */; };
 		52840F1F2B40094300CFB591 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 52840F1E2B40094300CFB591 /* Alamofire */; };
 		52840F232B401A6300CFB591 /* ItemsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52840F222B401A6300CFB591 /* ItemsRequest.swift */; };
@@ -74,6 +72,7 @@
 		526C8D8B2B49B416002F930B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		526C8D8D2B5BD4BD002F930B /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		526C8D902B5BDC89002F930B /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
+		526C8D972B64B735002F930B /* RouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTest.swift; sourceTree = "<group>"; };
 		52840EEC2B2D683900CFB591 /* QiitaPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52840EEF2B2D683900CFB591 /* QiitaPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaPracticeApp.swift; sourceTree = "<group>"; };
 		52840EF12B2D683900CFB591 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,10 +80,7 @@
 		52840EF52B2D683B00CFB591 /* QiitaPractice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QiitaPractice.entitlements; sourceTree = "<group>"; };
 		52840EF72B2D683B00CFB591 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52840EFD2B2D683B00CFB591 /* QiitaPracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaPracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52840F012B2D683B00CFB591 /* QiitaPracticeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaPracticeTests.swift; sourceTree = "<group>"; };
 		52840F072B2D683B00CFB591 /* QiitaPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52840F0B2B2D683B00CFB591 /* QiitaPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaPracticeUITests.swift; sourceTree = "<group>"; };
-		52840F0D2B2D683B00CFB591 /* QiitaPracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaPracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		52840F1B2B40082700CFB591 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		52840F222B401A6300CFB591 /* ItemsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRequest.swift; sourceTree = "<group>"; };
 		52840F242B401B5500CFB591 /* ItemsParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsParameter.swift; sourceTree = "<group>"; };
@@ -170,7 +166,6 @@
 			children = (
 				52840EEE2B2D683900CFB591 /* QiitaPractice */,
 				52840F002B2D683B00CFB591 /* QiitaPracticeTests */,
-				52840F0A2B2D683B00CFB591 /* QiitaPracticeUITests */,
 				52840EED2B2D683900CFB591 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -215,18 +210,9 @@
 		52840F002B2D683B00CFB591 /* QiitaPracticeTests */ = {
 			isa = PBXGroup;
 			children = (
-				52840F012B2D683B00CFB591 /* QiitaPracticeTests.swift */,
+				526C8D972B64B735002F930B /* RouterTest.swift */,
 			);
 			path = QiitaPracticeTests;
-			sourceTree = "<group>";
-		};
-		52840F0A2B2D683B00CFB591 /* QiitaPracticeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				52840F0B2B2D683B00CFB591 /* QiitaPracticeUITests.swift */,
-				52840F0D2B2D683B00CFB591 /* QiitaPracticeUITestsLaunchTests.swift */,
-			);
-			path = QiitaPracticeUITests;
 			sourceTree = "<group>";
 		};
 		52840F1A2B2D970B00CFB591 /* API */ = {
@@ -495,7 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52840F022B2D683B00CFB591 /* QiitaPracticeTests.swift in Sources */,
+				526C8D982B64B735002F930B /* RouterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,8 +489,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52840F0E2B2D683B00CFB591 /* QiitaPracticeUITestsLaunchTests.swift in Sources */,
-				52840F0C2B2D683B00CFB591 /* QiitaPracticeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
