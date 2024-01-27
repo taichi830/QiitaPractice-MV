@@ -52,13 +52,6 @@
 			remoteGlobalIDString = 52840EEB2B2D683900CFB591;
 			remoteInfo = QiitaPractice;
 		};
-		52840F082B2D683B00CFB591 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52840EE42B2D683900CFB591 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 52840EEB2B2D683900CFB591;
-			remoteInfo = QiitaPractice;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +73,6 @@
 		52840EF52B2D683B00CFB591 /* QiitaPractice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QiitaPractice.entitlements; sourceTree = "<group>"; };
 		52840EF72B2D683B00CFB591 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52840EFD2B2D683B00CFB591 /* QiitaPracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaPracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52840F072B2D683B00CFB591 /* QiitaPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52840F1B2B40082700CFB591 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		52840F222B401A6300CFB591 /* ItemsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRequest.swift; sourceTree = "<group>"; };
 		52840F242B401B5500CFB591 /* ItemsParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsParameter.swift; sourceTree = "<group>"; };
@@ -112,13 +104,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		52840EFA2B2D683B00CFB591 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52840F042B2D683B00CFB591 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -175,7 +160,6 @@
 			children = (
 				52840EEC2B2D683900CFB591 /* QiitaPractice.app */,
 				52840EFD2B2D683B00CFB591 /* QiitaPracticeTests.xctest */,
-				52840F072B2D683B00CFB591 /* QiitaPracticeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -349,24 +333,6 @@
 			productReference = 52840EFD2B2D683B00CFB591 /* QiitaPracticeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		52840F062B2D683B00CFB591 /* QiitaPracticeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 52840F172B2D683B00CFB591 /* Build configuration list for PBXNativeTarget "QiitaPracticeUITests" */;
-			buildPhases = (
-				52840F032B2D683B00CFB591 /* Sources */,
-				52840F042B2D683B00CFB591 /* Frameworks */,
-				52840F052B2D683B00CFB591 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				52840F092B2D683B00CFB591 /* PBXTargetDependency */,
-			);
-			name = QiitaPracticeUITests;
-			productName = QiitaPracticeUITests;
-			productReference = 52840F072B2D683B00CFB591 /* QiitaPracticeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -381,10 +347,6 @@
 						CreatedOnToolsVersion = 15.0.1;
 					};
 					52840EFC2B2D683B00CFB591 = {
-						CreatedOnToolsVersion = 15.0.1;
-						TestTargetID = 52840EEB2B2D683900CFB591;
-					};
-					52840F062B2D683B00CFB591 = {
 						CreatedOnToolsVersion = 15.0.1;
 						TestTargetID = 52840EEB2B2D683900CFB591;
 					};
@@ -410,7 +372,6 @@
 			targets = (
 				52840EEB2B2D683900CFB591 /* QiitaPractice */,
 				52840EFC2B2D683B00CFB591 /* QiitaPracticeTests */,
-				52840F062B2D683B00CFB591 /* QiitaPracticeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -427,13 +388,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		52840EFB2B2D683B00CFB591 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52840F052B2D683B00CFB591 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -485,13 +439,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52840F032B2D683B00CFB591 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -499,11 +446,6 @@
 			isa = PBXTargetDependency;
 			target = 52840EEB2B2D683900CFB591 /* QiitaPractice */;
 			targetProxy = 52840EFE2B2D683B00CFB591 /* PBXContainerItemProxy */;
-		};
-		52840F092B2D683B00CFB591 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 52840EEB2B2D683900CFB591 /* QiitaPractice */;
-			targetProxy = 52840F082B2D683B00CFB591 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -740,48 +682,6 @@
 			};
 			name = Release;
 		};
-		52840F182B2D683B00CFB591 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiitapractice.QiitaPracticeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = QiitaPractice;
-			};
-			name = Debug;
-		};
-		52840F192B2D683B00CFB591 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiitapractice.QiitaPracticeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = QiitaPractice;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -808,15 +708,6 @@
 			buildConfigurations = (
 				52840F152B2D683B00CFB591 /* Debug */,
 				52840F162B2D683B00CFB591 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		52840F172B2D683B00CFB591 /* Build configuration list for PBXNativeTarget "QiitaPracticeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				52840F182B2D683B00CFB591 /* Debug */,
-				52840F192B2D683B00CFB591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
