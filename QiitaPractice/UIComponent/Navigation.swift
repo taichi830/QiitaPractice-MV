@@ -26,10 +26,10 @@ struct Navigation<Content: View, Destination: Routable>: View {
                 .toolbarColorScheme(.dark, for: .navigationBar)
         }
         .sheet(item: $router.presentingSheet) { route in
-            router.view(for: route)
+            router.view(for: route).ignoresSafeArea()
         }
         .fullScreenCover(item: $router.presentingFullScreenCover) { route in
-            router.view(for: route)
+            router.view(for: route).ignoresSafeArea()
         }
         .environmentObject(router)
     }
