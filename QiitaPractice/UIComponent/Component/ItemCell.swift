@@ -9,34 +9,49 @@ import SwiftUI
 import Kingfisher
 
 struct ItemCell<Entity: ItemEntity>: View {
-    let item: Entity
+    @State private var isFavorite = false
+    private let item: Entity
+    private let favoriteAction: () -> Void
     
-    init(item: Entity) {
+    init(
+        item: Entity,
+        favoriteAction: @escaping () -> Void
+    ) {
         self.item = item
+        self.favoriteAction = favoriteAction
     }
     
     var body: some View {
-        HStack(alignment: .top) {
-            KFImage(item.userImageURL)
-                .resizable()
-                .frame(width: 30, height: 30)
-                .background(Color.blue)
-                .clipShape(.circle)
-            
-            VStack(alignment: .leading) {
-                Text(item.userName)
-                    .font(.caption)
-                    .lineLimit(1)
-                Text(item.createdAt)
-                    .font(.caption)
-                    .lineLimit(1)
-                Text(item.title)
-                    .font(.title3)
-                    .fontWeight(.medium)
-                    .lineLimit(2)
+        HStack(alignment: .center) {
+            HStack(alignment: .top) {
+                KFImage(item.userImageURL)
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .background(Color.blue)
+                    .clipShape(.circle)
+                
+                VStack(alignment: .leading) {
+                    Text(item.userName)
+                        .font(.caption)
+                        .lineLimit(1)
+                    Text(item.createdAt)
+                        .font(.caption)
+                        .lineLimit(1)
+                    Text(item.title)
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .lineLimit(2)
+                }
             }
             
             Spacer()
+            
+            Image(systemName: isFavorite ? "star.fill" : "star")
+                .foregroundStyle(.green)
+                .onTapGesture {
+                    isFavorite.toggle()
+                    favoriteAction()
+                }
         }
     }
 }
@@ -52,6 +67,6 @@ struct ItemCell<Entity: ItemEntity>: View {
         var updatedAt: String? = "2023年1月2日"
     }
     
-    return ItemCell(item: MockEntity())
-        .padding()
+    return ItemCell(item: MockEntity()) {}
+    .padding()
 }

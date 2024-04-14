@@ -18,9 +18,15 @@ struct HomeView: View {
     }
     
     var body: some View {
-        ItemList(items: homeData.items) { item in
-            router.routeTo(.detail(item.articleURL))
-        }
+        ItemList(
+            items: homeData.items,
+            action: { item in
+                router.routeTo(.detail(item.articleURL))
+            },
+            favoriteAction: {
+                print("favorite")
+            }
+        )
         .navigationTitle("QiitaPractice")
         .navigationBarTitleDisplayMode(.large)
         .onAppear {

@@ -9,25 +9,30 @@ import SwiftUI
 
 struct ItemList<Entity: ItemEntity>: View {
     private let items: [Entity]
-    private let action: (Entity) -> Void
+    private let selectAction: (Entity) -> Void
+    private let favoriteAction: () -> Void
     
     init(
         items: [Entity],
-        action: @escaping (Entity) -> Void
+        action: @escaping (Entity) -> Void,
+        favoriteAction: @escaping () -> Void
     ) {
         self.items = items
-        self.action = action
+        self.selectAction = action
+        self.favoriteAction = favoriteAction
     }
     
     var body: some View {
         List(items) { item in
             VStack(spacing: 0) {
-                ItemCell(item: item)
-                    .padding()
+                ItemCell(item: item) {
+                    favoriteAction()
+                }
+                .padding()
             }
             .listRowInsets(EdgeInsets())
             .onTapGesture {
-                action(item)
+                selectAction(item)
             }
         }
         .listStyle(.plain)
@@ -47,5 +52,9 @@ struct ItemList<Entity: ItemEntity>: View {
     
     let entities = Array(repeating: MockEntity(), count: 5)
     
-    return ItemList(items: entities) { _ in }
+    return ItemList(
+        items: entities,
+        action: { _ in },
+        favoriteAction: {}
+    )
 }
